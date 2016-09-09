@@ -1,0 +1,60 @@
+body {
+  background-color: #00a2ff;
+  height: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+#map {
+  height: 908px;
+  width: 100%;
+}
+
+.row {
+  background-color: gray;
+}
+
+.header-text {
+  font-style: italic;
+  color: wheat;
+  margin-left: 20px;
+  font-weight: 700;
+}
+
+.btn:hover {
+  color: #00a6ff;
+}
+
+.search-btn {
+  margin-right: 70px;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+input[type=text] {
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 5px;
+}
+
+.list-container {
+  width: 100px;
+  height: 908px;
+  overflow: scroll;
+  background-color: lightblue;
+}
+
+.item-details {
+  background-color: #00a6ff;
+  padding-left: 120px;
+  font-weight: 700;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.image {
+  margin-top: 40px;
+  width: 107px;
+  border-radius: 30px;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="who-what-where">
+<head>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/lib/angular.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAx2FJkdGPsyPvXc0TUDsKEIVnut6NDb6U"></script>
+    <script src="js/index.js"></script>
+    <script type="text/javascript" src="js/lib/jquery.min.js"></script>
+</head>
+<body ng-controller="myCtrl">
+<div class="row">
+    <h2 class="pull-left header-text ">Who What Where</h2>
+    <div class="pull-right search-btn">
+        <div class="row-1">
+            <div class="col-xs-12 col-sm-6 col-md-5 col-lg-5 ">
+                <input class="form-control" type="text" placeholder="What" ng-model="query"/>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-5 col-lg-5 ">
+                <input class="form-control" type="text" placeholder="Where" ng-model="location"/>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
+                <button class="btn btn-info form-control" ng-click="search()">Search</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row-2 main-container ">
+    <div class="col-xs-4 list-container">
+        <div class="list grid"
+             ng-repeat="item in responseDetails track by $index"
+             class="item-detail" id="{{ item.id }}"
+             ng-click="onClick(item.url)">
+
+            <div class="panel-container modal-content ">
+                <div class="pull-left"><img class="image" ng-src="{{item.image}}"/></div>
+                <div class="item-details jumbotron list-group">
+                    <div class="item-name">{{$index + 1 +")"}}&nbsp;Name:&nbsp;{{item.name}}</div>
+                    <div class="item-phone">Phone:&nbsp;{{item.phone}}</div>
+                    <div class="item-address">Address:&nbsp;{{item.address}}</div>
+                    <div class="item-image">{{item.photo}}</div>
+                    <div class="item-rating">City:&nbsp;{{item.city}}</div>
+                    <div class="rating-button">Rating:&nbsp;{{item.rating}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-8 map-container modal-content">
+        <div id="map"></div>
+    </div>
+</div>
+</body>
+</html>
